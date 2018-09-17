@@ -2,22 +2,78 @@ $(document).ready(function () {
 
 })
 
+function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
 var countdownTimer = {
     time: 30,
 }
-
+}
 var triviaQuestions = [{
 
-        question: "What color is the sky?",
-        answer: ["Red", "Blue", "Yellow"],
-        correct: "Blue"
+        question: "What is the registry of the main starship in the show?",
+        answer: ["1701 E USS Enterprize", "1701 D USS Enterprize", "1701 c USS Enterprize"],
+        correct: "1701 D USS Enterprize",
+        gif: ""
     },
     {
-        question: "What color is the grass?",
-        answer: ["Orange", "Yellow", "Green"],
-        correct: "Green"
+        question: "What is the name of Worf's son?",
+        answer: ["Alexander", "Justin", "Casey"],
+        correct: "Alexander",
+        gif: ""
+    },
+    {
+        question: "What is Captain Picard's favorite drink?",
+        answer: ["Whiskey", "Klingon Blood Wine", "Earl Gray tea, hot"],
+        correct: "Earl Gray tea, hot",
+        gif: ""
+    },
+    {
+        question: "What does the 't' stand for in William T Riker?",
+        answer: ["Terrel", "Thomas", "Terry"],
+        correct: "Thomas",
+        gif: ""
+    },
+    {
+        question: "Who was the only main character to die?",
+        answer: ["Tasha Yar", "Data", "Captain Picard"],
+        correct: "Tasha Yar",
+        gif: ""
+    },
+    {
+        question: "Who only served for a year as Chief Medical?",
+        answer: ["Dianna Troi", "Katherine Palaski", "Beverly Crusher"],
+        correct: "Katherine Palaski",
+        gif: ""
+    },
+    {
+        question: "Who became an \"Acting Ensign\"",
+        answer: ["William Riker", "Jordi La Forge", "Wesley Crusher"],
+        correct: "Wesley Crusher",
+        gif: ""
+    },
+    {
+        question: "What character from The Original Star Trek played in a two-part episode with Captain Picard?",
+        answer: ["James T Kirk", "Spock", "Scotty"],
+        correct: "Spock",
+        gif: ""
+    },
+    {
+        question: "What is the name of Data's Daughter?",
+        answer: ["Lal", "Lea", "Lisa"],
+        correct: "Lal",
+        gif: ""
+    },
+    {
+        question: "What is the name of Data's animal and what kind of animal is it?",
+        answer: ["Spot,the dog", "Spot, the fish", "Spot, the cat"],
+        correct: "Spot, the cat",
+        gif: ""
     }
 ]
+$(window).ready(function() {
+    $('#loading').hide();
+});
 
 function renderQuestions() {
     for(var z = 0; z < triviaQuestions.length; z++){
@@ -36,10 +92,7 @@ function renderQuestions() {
 renderQuestions();
 
 var startGame = $("#start-btn").on('click', function () {
-    $(this).parent().hide();
-    $('.container').show();
-    countdown(60);
-    questionDisplay();
+    
 });
 
 function answerCorrect() {
@@ -96,3 +149,4 @@ $('.answerchoice').on('click', function () {
     }
 
 });
+
